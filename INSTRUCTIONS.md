@@ -29,7 +29,6 @@ Create an application that manages employee salaries and adds salaries up to rep
 
 ![Wireframe](salary-calc-wireframe.png)
 
----
 
 ### Functional Requirements
 
@@ -37,13 +36,12 @@ The application needs to be able to gather the information (see wireframe), stor
 
 Users need to be able to delete each entry and the monthly calculation needs to reflect it.
 
----
-
 ### Files Provided
 
-No files have been provided. Fork and clone this repository or create a new GitHub repository to get started. 
+No files have been provided and this repo is private. Please fork this repo to your own GitHub account.
 
+---
 
 ## Challenge Submission
 
-Ensure your GitHub repo is public and has your final work. Email your contact when you have finished.
+Ensure your GitHub repo has your final work. Email your contact when you have finished.
