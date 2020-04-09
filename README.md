@@ -38,7 +38,7 @@ Users need to be able to delete each entry and the monthly calculation needs to 
 
 ### Files Provided
 
-No files have been provided and this repo is private. Please fork this repo to your own GitHub account.
+No files have been provided and this repo is private. Please clone this repo and push to your own GitHub repo, do NOT fork.
 
 ---
 
