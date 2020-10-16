@@ -4,7 +4,7 @@ Welcome!
 
 This application challenge is intended to give you a chance to demonstrate your technical skills using HTML, CSS, and JavaScript. This is a similar challenge given to students early on in the program so as such, it is intentionally simplified and not expected to be a production-ready application. 
 
-Unit tests and authentication are certainly great, but not here. Please focus on the functional components and providing solid code you could use to teach beginning programmers.
+Unit tests and authentication are certainly great, but not here. Please focus on the functional components and providing solid code **you could use to teach beginning programmers.**
 
 
 ## Do
