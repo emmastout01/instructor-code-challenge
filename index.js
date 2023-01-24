@@ -1,21 +1,15 @@
-/* on form submit: 
-
-  - re-run the monthly cost calculation
-  - display the new monthly cost calculation
-*/
-
-const employeeTableBody = document.getElementById("employee-table-body");
 const employeeForm = document.forms.addEmployeeForm;
 const firstNameInput = document.getElementById('first-name');
 const lastNameInput = document.getElementById('last-name');
 const idInput = document.getElementById('employee-id');
 const titleInput = document.getElementById('title');
 const annualSalaryInput = document.getElementById('annual-salary');
+const employeeTableBody = document.getElementById("employee-table-body");
 const monthlyCost = document.getElementById('monthly-cost')
 
 let annualSalaryTotal = 0;
 
-const formatSalary = (salary) => {
+const formatSalary = salary => {
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -39,7 +33,7 @@ const addEmployee = e => {
         lastName: lastNameInput.value,
         employeeId: idInput.value,
         title: titleInput.value,
-        annualSalary: annualSalaryInput.value
+        annualSalary: parseInt(annualSalaryInput.value)
     };
 
     const newRow = employeeTableBody.insertRow();
@@ -49,16 +43,22 @@ const addEmployee = e => {
     <td>${employee.employeeId}</td>
     <td>${employee.title}</td>
     <td>${formatSalary(employee.annualSalary)}</td>
-    <td><button >Delete</button></td>
     `
 
+    const deleteEmployee = () => {
+        newRow.remove();
+        annualSalaryTotal -= employee.annualSalary;
+        calculateMonthlyCost();
+    }
+
+    const newCell = newRow.insertCell();
+    const deleteButton = document.createElement("INPUT");
+    deleteButton.type = "button";
+    deleteButton.value = "Delete";
+    deleteButton.addEventListener('click', deleteEmployee);
+    newCell.appendChild(deleteButton);
+
     annualSalaryTotal += employee.annualSalary;
-
-
     calculateMonthlyCost();
-
-    // How to get the delete button to delete that specific employee?
 }
 employeeForm.addEventListener('submit', addEmployee);
-
-
