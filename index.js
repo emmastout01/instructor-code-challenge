@@ -5,7 +5,7 @@ const idInput = document.getElementById('employee-id');
 const titleInput = document.getElementById('title');
 const annualSalaryInput = document.getElementById('annual-salary');
 const employeeTableBody = document.getElementById("employee-table-body");
-const monthlyCost = document.getElementById('monthly-cost')
+const monthlyCostDisplay = document.getElementById('monthly-cost')
 
 let annualSalaryTotal = 0;
 
@@ -19,15 +19,31 @@ const formatSalary = salary => {
 }
 
 const calculateMonthlyCost = () => {
-    const cost = Math.round(annualSalaryTotal / 12);
-    monthlyCost.innerText = formatSalary(cost);
-    if (cost > 20000) {
+    const monthlyCost = Math.round(annualSalaryTotal / 12);
+    monthlyCostDisplay.innerText = formatSalary(monthlyCost);
+    if (monthlyCost > 20000) {
         alert('The monthly salary cost exceeds $20,000.');
     }
 }
 
+const deleteEmployee = (employeeRow, salary) => {
+    employeeRow.remove();
+    annualSalaryTotal -= salary;
+    calculateMonthlyCost();
+}
+
+const clearInputFields = () => {
+    firstNameInput.value = '';
+    lastNameInput.value = '';
+    idInput.value = '';
+    titleInput.value = '';
+    annualSalaryInput.value = '';
+
+}
+
 const addEmployee = e => {
     e.preventDefault();
+
     const employee = {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
@@ -36,6 +52,7 @@ const addEmployee = e => {
         annualSalary: parseInt(annualSalaryInput.value)
     };
 
+    // Create a new row and add employee data to the row
     const newRow = employeeTableBody.insertRow();
     newRow.innerHTML = `
     <td>${employee.firstName}</td>
@@ -43,22 +60,22 @@ const addEmployee = e => {
     <td>${employee.employeeId}</td>
     <td>${employee.title}</td>
     <td>${formatSalary(employee.annualSalary)}</td>
-    `
+    `;
 
-    const deleteEmployee = () => {
-        newRow.remove();
-        annualSalaryTotal -= employee.annualSalary;
-        calculateMonthlyCost();
-    }
-
+    // Create a delete button and add it to the new row
     const newCell = newRow.insertCell();
-    const deleteButton = document.createElement("INPUT");
+    const deleteButton = document.createElement("input");
     deleteButton.type = "button";
     deleteButton.value = "Delete";
-    deleteButton.addEventListener('click', deleteEmployee);
+    deleteButton.addEventListener('click', () => deleteEmployee(newRow, employee.annualSalary));
     newCell.appendChild(deleteButton);
 
+    // Add employee salary to cost total and calculate a new monthly cost
     annualSalaryTotal += employee.annualSalary;
     calculateMonthlyCost();
+
+    // Clear input fields
+    clearInputFields();
 }
+
 employeeForm.addEventListener('submit', addEmployee);
