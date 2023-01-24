@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Salary calculator</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+
+<body>
+    <div>
+        <form name="addEmployeeForm">
+            <input id="first-name" type="text" placeholder="First Name" required />
+            <input id="last-name" type="text" placeholder="Last Name" required />
+            <input id="employee-id" type="text" placeholder="ID" required />
+            <input id="title" type="text" placeholder="Title" required />
+            <input id="annual-salary" type="text" placeholder="Annual Salary" required />
+            <input type="submit" />
+        </form>
+
+        <h2>Employees</h2>
+        <table>
+            <thead>
+                <tr class="header-row">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </tr>
+            </thead>
+            <tbody id="employee-table-body"></tbody>
+           
+        </table>
+
+        <h3>Total monthly: <span id="monthly-amount"></span></h3>
+    </div>
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>
