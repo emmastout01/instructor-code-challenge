@@ -27,6 +27,9 @@ const formatSalary = (salary) => {
 const calculateMonthlyCost = () => {
     const cost = Math.round(annualSalaryTotal / 12);
     monthlyCost.innerText = formatSalary(cost);
+    if (cost > 20000) {
+        alert('The monthly salary cost exceeds $20,000.');
+    }
 }
 
 const addEmployee = e => {
@@ -36,7 +39,7 @@ const addEmployee = e => {
         lastName: lastNameInput.value,
         employeeId: idInput.value,
         title: titleInput.value,
-        annualSalary: parseInt(annualSalaryInput.value.replace(',', ''))
+        annualSalary: annualSalaryInput.value
     };
 
     const newRow = employeeTableBody.insertRow();
@@ -56,9 +59,6 @@ const addEmployee = e => {
 
     // How to get the delete button to delete that specific employee?
 }
-
-const removeEmployee =
-
-    employeeForm.addEventListener('submit', addEmployee);
+employeeForm.addEventListener('submit', addEmployee);
 
 
