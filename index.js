@@ -5,7 +5,8 @@ const idInput = document.getElementById('employee-id');
 const titleInput = document.getElementById('title');
 const annualSalaryInput = document.getElementById('annual-salary');
 const employeeTableBody = document.getElementById("employee-table-body");
-const monthlyCostDisplay = document.getElementById('monthly-cost')
+const monthlyCostDisplay = document.getElementById('monthly-cost');
+const totalCostWarning = document.getElementById('total-cost-warning');
 
 let annualSalaryTotal = 0;
 
@@ -22,7 +23,9 @@ const calculateMonthlyCost = () => {
     const monthlyCost = Math.round(annualSalaryTotal / 12);
     monthlyCostDisplay.innerText = formatSalary(monthlyCost);
     if (monthlyCost > 20000) {
-        alert('The monthly salary cost exceeds $20,000.');
+        const alertMessage = 'Warning: The monthly salary cost exceeds $20,000.'
+        alert(alertMessage);
+        totalCostWarning.innerText = alertMessage;
     }
 }
 
@@ -38,7 +41,6 @@ const clearInputFields = () => {
     idInput.value = '';
     titleInput.value = '';
     annualSalaryInput.value = '';
-
 }
 
 const addEmployee = e => {
@@ -66,8 +68,8 @@ const addEmployee = e => {
     const newCell = newRow.insertCell();
     const deleteButton = document.createElement("input");
     deleteButton.type = "button";
-    deleteButton.value = "Delete";
     deleteButton.className = "button";
+    deleteButton.value = "Delete";
     deleteButton.addEventListener('click', () => deleteEmployee(newRow, employee.annualSalary));
     newCell.appendChild(deleteButton);
 

@@ -11,18 +11,18 @@
     <div class="header">
         <h1>Salary Calculator</h1>
     </div>
-    <div class="body">
+    <div class="content">
         <h2>Add employee</h2>
-        <div id="form-container">
-            <form name="addEmployeeForm" id="employee-form">
-                <input class="form-input" id="first-name" type="text" placeholder="First Name" required />
-                <input class="form-input" id="last-name" type="text" placeholder="Last Name" required />
-                <input class="form-input" id="employee-id" type="text" placeholder="ID" required />
-                <input class="form-input" id="title" type="text" placeholder="Title" required />
-                <input class="form-input" id="annual-salary" type="number" placeholder="Annual Salary" required />
-                <input class="button" type="submit" />
-            </form>
-        </div>
+        <form name="addEmployeeForm" id="employee-form">
+            <input class="form-input" id="first-name" type="text" placeholder="First Name" required />
+            <input class="form-input" id="last-name" type="text" placeholder="Last Name" required />
+            <input class="form-input" id="employee-id" type="text" placeholder="ID" required />
+            <input class="form-input" id="title" type="text" placeholder="Title" required />
+            <input class="form-input" id="annual-salary" type="number" placeholder="Annual Salary" required />
+            <input class="button" type="submit" />
+        </form>
+
+        <h4 id="total-cost-warning"></h4>
 
         <h2>Employees</h2>
         <table id="employee-table">
@@ -37,7 +37,6 @@
                 </tr>
             </thead>
             <tbody id="employee-table-body"></tbody>
-
         </table>
 
         <h2 id="total-cost">Total monthly: <span id="monthly-cost">$0</span></h2>

@@ -1,6 +1,5 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* background-color: #dadada; */
 }
 
 .header {
@@ -8,10 +7,9 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
-
 }
 
-.body {
+.content {
     padding: 10px;
 }
 
@@ -19,36 +17,40 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .form-input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
     margin: 10px;
     height: 30px;
-    font-size: 20px;
-    border-radius: 5px;
     border: 1px solid gray;
+    border-radius: 5px;
     box-shadow: 2px 2px 5px gray;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .button {
-    border-radius: 5px;
     font-size: 18px;
     padding: 10px 20px;
     border: 1px solid gray;
+    border-radius: 5px;
     min-height: 30px;
-    margin: auto;
 }
 
 .button:hover {
-    box-shadow: 2px 2px 5px gray;
     background-color: #b4b4b4;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#total-cost-warning {
+    color: red;
 }
 
 #employee-table {
+    font-size: 20px;
     border-collapse: collapse;
     width: 100%;
-    font-size: 20px;
 }
 
 #employee-table td,
