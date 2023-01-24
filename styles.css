@@ -1,10 +1,10 @@
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #dadada;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* background-color: #dadada; */
 }
 
 .header {
-    background-color:#f3f6f4;
+    background-color: #f3f6f4;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -15,9 +15,10 @@ body {
     padding: 10px;
 }
 
-.employee-form {
+#employee-form {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .form-input {
@@ -27,10 +28,49 @@ body {
     border-radius: 5px;
     border: 1px solid gray;
     box-shadow: 2px 2px 5px gray;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-.header-row {
+.button {
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    min-height: 30px;
+    margin: auto;
+}
 
+.button:hover {
+    box-shadow: 2px 2px 5px gray;
+    background-color: #b4b4b4;
+}
+
+#employee-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 20px;
+}
+
+#employee-table td,
+#employee-table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#employee-table th {
+    background-color: #acaaaa;
+}
+
+#employee-table tr:nth-child(even) {
+    background-color: #dadada;
+}
+
+#employee-table td:last-child {
+    display: flex;
+    justify-content: center;
+    border-width: 0 .5px .5px 0;
+}
+
+#total-cost {
+    float: right;
 }

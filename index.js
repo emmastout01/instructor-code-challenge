@@ -67,6 +67,7 @@ const addEmployee = e => {
     const deleteButton = document.createElement("input");
     deleteButton.type = "button";
     deleteButton.value = "Delete";
+    deleteButton.className = "button";
     deleteButton.addEventListener('click', () => deleteEmployee(newRow, employee.annualSalary));
     newCell.appendChild(deleteButton);
 

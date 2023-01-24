@@ -14,35 +14,36 @@
     <div class="body">
         <h2>Add employee</h2>
         <div id="form-container">
-            <form name="addEmployeeForm" class="employee-form">
+            <form name="addEmployeeForm" id="employee-form">
                 <input class="form-input" id="first-name" type="text" placeholder="First Name" required />
                 <input class="form-input" id="last-name" type="text" placeholder="Last Name" required />
                 <input class="form-input" id="employee-id" type="text" placeholder="ID" required />
                 <input class="form-input" id="title" type="text" placeholder="Title" required />
                 <input class="form-input" id="annual-salary" type="number" placeholder="Annual Salary" required />
-                <input class="form-button" type="submit" />
+                <input class="button" type="submit" />
             </form>
         </div>
-       
 
         <h2>Employees</h2>
-        <table>
+        <table id="employee-table">
             <thead>
-                <tr class="header-row">
+                <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>ID</th>
                     <th>Title</th>
                     <th>Annual Salary</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="employee-table-body"></tbody>
-           
+
         </table>
 
-        <h3>Total monthly: <span id="monthly-cost"></span></h3>
+        <h2 id="total-cost">Total monthly: <span id="monthly-cost">$0</span></h2>
     </div>
 
 </body>
 <script type="text/javascript" src="index.js"></script>
+
 </html>
