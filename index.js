@@ -1,6 +1,5 @@
 /* on form submit: 
-  - gather all employee data
-  - add that data to the emp. list
+
   - re-run the monthly cost calculation
   - display the new monthly cost calculation
 */
@@ -12,12 +11,54 @@ const lastNameInput = document.getElementById('last-name');
 const idInput = document.getElementById('employee-id');
 const titleInput = document.getElementById('title');
 const annualSalaryInput = document.getElementById('annual-salary');
+const monthlyCost = document.getElementById('monthly-cost')
 
+let annualSalaryTotal = 0;
 
-const addEmployee = e => {
-
+const formatSalary = (salary) => {
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+    });
+    return formatter.format(salary);
 }
 
-employeeForm.addEventListener('submit', addEmployee);
+const calculateMonthlyCost = () => {
+    const cost = Math.round(annualSalaryTotal / 12);
+    monthlyCost.innerText = formatSalary(cost);
+}
+
+const addEmployee = e => {
+    e.preventDefault();
+    const employee = {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        employeeId: idInput.value,
+        title: titleInput.value,
+        annualSalary: parseInt(annualSalaryInput.value.replace(',', ''))
+    };
+
+    const newRow = employeeTableBody.insertRow();
+    newRow.innerHTML = `
+    <td>${employee.firstName}</td>
+    <td>${employee.lastName}</td>
+    <td>${employee.employeeId}</td>
+    <td>${employee.title}</td>
+    <td>${formatSalary(employee.annualSalary)}</td>
+    <td><button >Delete</button></td>
+    `
+
+    annualSalaryTotal += employee.annualSalary;
+
+
+    calculateMonthlyCost();
+
+    // How to get the delete button to delete that specific employee?
+}
+
+const removeEmployee =
+
+    employeeForm.addEventListener('submit', addEmployee);
 
 
